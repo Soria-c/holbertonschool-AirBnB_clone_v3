@@ -15,8 +15,9 @@ def get_all_states():
 @app_views.route('/states/<string:state_id>')
 def get_state_by_id(state_id):
     """Searches and State by id"""
-    state : State = storage.get(State, state_id)
+    state: State = storage.get(State, state_id)
     return jsonify(state.to_dict()) if state else abort(404)
+
 
 @app_views.route('/states', methods=['POST'], strict_slashes=False)
 def states_post():
