@@ -15,10 +15,7 @@ def close():
     "Closes the db connection"
     storage.close()
 
-@app_views.route('/status')
-def status():
-    """Returs the status of the service"""
-    return jsonify({"status": "OK"})
+
 
 if __name__ == '__main__':
     ip = getenv('HBNB_API_HOST')
